@@ -1,6 +1,10 @@
 # ansible-modules
 Ansible modules being developed (R&amp;D) that aren't yet ready for prime time use in Ansible Extra's modules or Core.
 
+*Local use in Ansible playbooks*
+In your root ansible playbooks directory create a folder called 'library'.
+Place the module of choice directly in this library folder. Now these modules will be available to your ansible project.
+
 Current modules:
 *mysql_query*
 Pre-requisites:
