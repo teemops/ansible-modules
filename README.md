@@ -17,7 +17,7 @@ This currently supports the following basic SQl queries:
 -DELETE
 
 Used as follows
-'''yaml
+```yaml
 - mysql_query:
     login_host: "localhost"
     login_user: "some_user"
@@ -25,7 +25,7 @@ Used as follows
     db: "my_db"
     query: "select current_timestamp() as CurrentTime "
   register: query_output
-'''
+```
 Returning and displaying information.
 Once you have the query working you can use "register" to return the output.
 *SELECT queries*
@@ -40,7 +40,7 @@ The module returns the following values:
 
 Example in Ansible task to retrieve the result from a variable called 'query_output'
 
-'''yaml
+```yaml
 #Displays  value of a field named 'CurrentTime' in first row
 - debug: var=query_output.result[0].CurrentTime
 # or set a variable
@@ -52,4 +52,4 @@ Example in Ansible task to retrieve the result from a variable called 'query_out
     - query_output.result
     - ['email']
 
-'''
+```
