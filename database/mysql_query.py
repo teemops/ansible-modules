@@ -106,7 +106,7 @@ def main():
     connect_to_db = db
     
     try:
-        db_connection = MySQLdb.connect(login_host, login_user, login_password, connect_to_db)
+        db_connection = MySQLdb.connect(host=login_host, user=login_user, passwd=login_password, db=connect_to_db, port=login_port)
         cursor = db_connection.cursor()
     except Exception, e:
         if "Unknown database" in str(e):
