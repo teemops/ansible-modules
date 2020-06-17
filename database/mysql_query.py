@@ -108,7 +108,7 @@ def main():
     try:
         db_connection = MySQLdb.connect(login_host, login_user, login_password, connect_to_db)
         cursor = db_connection.cursor()
-    except Exception, e:
+    except Exception as e:
         if "Unknown database" in str(e):
                 errno, errstr = e.args
                 module.fail_json(msg="ERROR: %s %s" % (errno, errstr))
@@ -146,7 +146,7 @@ def main():
         
         
         
-    except Exception, e:
+    except Exception as e:
         module.fail_json(msg="Unable to run query against database. Exception message is %s" % (e))
 
     
